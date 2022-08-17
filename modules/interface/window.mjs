@@ -143,7 +143,7 @@ class Instance {
 		
 		if (this.icon != "") {
 			let icon = document.createElement("img");
-			icon.src = "/assets/icons/" + this.icon;
+			icon.src = "../../assets/icons/" + this.icon;
 			icon.setAttribute("class", "window_icon");
 			caption.appendChild(icon);
 		}
@@ -210,7 +210,7 @@ class Instance {
 		
 		if (this.allowMinimize) {
 			let btn = document.createElement("img");
-			btn.src = "/assets/shared/minimizeButton.png";
+			btn.src = "../../assets/shared/minimizeButton.png";
 			btn.setAttribute("class", "window_btnMinimize");
 			btn.setAttribute("id", `window_btnMinimize${count}`);
 			btn.setAttribute("draggable", "false");
@@ -225,7 +225,7 @@ class Instance {
 		
 		if (this.allowMaximize) {
 			let btn = document.createElement("img");
-			btn.src = "/assets/shared/maximizeButton.png";
+			btn.src = "../../assets/shared/maximizeButton.png";
 			btn.setAttribute("class", "window_btnMaximize");
 			btn.setAttribute("id", `window_btnMaximize${count}`);
 			btn.setAttribute("draggable", "false");
@@ -343,7 +343,7 @@ class Instance {
 		}
 		
 		let closeBtn = document.createElement("img");
-		closeBtn.src = "/assets/shared/closeButton.png";
+		closeBtn.src = "../../assets/shared/closeButton.png";
 		closeBtn.setAttribute("class", "window_btnClose");
 		closeBtn.setAttribute("id", `window_btnClose${count}`);
 		closeBtn.setAttribute("draggable", "false");
@@ -366,7 +366,7 @@ class Instance {
 		// Window contents
 		let container = document.createElement("div");
 		container.setAttribute("class", "window_content");
-		let content = fetch("/windowdata/" + this.path)
+		let content = fetch("../windowdata/" + this.path)
 			.then(response => {
 				if (response.ok) {
 					return response.text();
