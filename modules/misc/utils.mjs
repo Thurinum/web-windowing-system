@@ -9,4 +9,9 @@ function id(query) {
 	return document.getElementById(query); // :3
 }
 
-export { id };
+function getFormattedDate() {
+	const date = new Date();
+	return `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}`;
+}
+
+export { id, getFormattedDate };

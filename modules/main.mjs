@@ -4,6 +4,9 @@ import * as AppMenu from "./interface/appmenu.mjs";
 import * as Utils from "./misc/utils.mjs";
 import * as Debug from "./misc/debug.mjs";
 import * as Settings from "./misc/settings.mjs";
+import * as System from "./system.mjs";
+
+System.setupClock();
 
 ContextMenu.define(Utils.id("workspace"),
 	new ContextMenu.Entries (
