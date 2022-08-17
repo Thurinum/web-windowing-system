@@ -46,7 +46,7 @@ function create(data) {
 			entry.setAttribute("class", "contextMenu_button");
 			entry.setAttribute("id", `contextMenu_button${e}`);
 			
-			let rootPath = "../../assets/icons/";
+			let rootPath = "assets/icons/";
 			let icon = document.createElement("img");
 			icon.setAttribute("class", "contextMenu_icon");
 			
