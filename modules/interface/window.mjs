@@ -398,7 +398,7 @@ class Instance {
 		thumbnail.style.width = "157px";
 		thumbnail.setAttribute("class", "window_thumbnail");
 		thumbnail.setAttribute("id", `window_thumbnail${count}`);
-		thumbnail.innerHTML = `<div class="window_thumbnailWrapper"><img class="window_thumbnailIcon" src="${"../assets/icons/" + this.icon}" /><span class="window_thumbnailTitle">${this.title}</span></div><span class="window_thumbnailOverlay" id="window_thumbnailOverlay${count}"></span>`;
+		thumbnail.innerHTML = `<div class="window_thumbnailWrapper"><img class="window_thumbnailIcon" src="${"assets/icons/" + this.icon}" /><span class="window_thumbnailTitle">${this.title}</span></div><span class="window_thumbnailOverlay" id="window_thumbnailOverlay${count}"></span>`;
 		win.thumbnail = thumbnail; // Used in setActive
 		
 		// Toggle window state on taskbar thumbnail click
