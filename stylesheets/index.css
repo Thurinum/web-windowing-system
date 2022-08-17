@@ -68,20 +68,25 @@ body {
 }
 
 #appmenu {
-	position: absolute;
-	bottom: 3vh;
-	left: 0;
-	height: 55vh;
 	width: 30vw;
-	border: solid 3px #045fe8;
-	background-image: url("/assets/shared/appmenuBackground2.jpeg");
+	height: 55vh;
+	padding: 10px;
+	
+	position: absolute;
+	left: 0;
+	bottom: 3vh;
 	z-index: 3;
-	box-shadow: 6px 3px 25px 2px #989595;
 
-	overflow-y: auto;
 	display: none;
 	grid-template-columns: repeat(5, 1fr);
 	grid-auto-rows: 20%;
+	overflow-y: auto;
+	
+	border: solid 3px #045fe8;
+	border-top-right-radius: 10px;
+	background-image: url("/assets/shared/appmenuBackground2.jpeg");
+	box-shadow: 6px 1px 10px 2px #0000004d;
+
 	transition: opacity 0.2s ease-out, bottom 0.2s ease-out;
 }
 
