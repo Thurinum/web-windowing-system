@@ -398,7 +398,7 @@ class Instance {
 		thumbnail.style.width = "157px";
 		thumbnail.setAttribute("class", "window_thumbnail");
 		thumbnail.setAttribute("id", `window_thumbnail${count}`);
-		thumbnail.innerHTML = `<div class="window_thumbnailWrapper"><img class="window_thumbnailIcon" src="${"/assets/icons/" + this.icon}" /><span class="window_thumbnailTitle">${this.title}</span></div><span class="window_thumbnailOverlay" id="window_thumbnailOverlay${count}"></span>`;
+		thumbnail.innerHTML = `<div class="window_thumbnailWrapper"><img class="window_thumbnailIcon" src="${"../assets/icons/" + this.icon}" /><span class="window_thumbnailTitle">${this.title}</span></div><span class="window_thumbnailOverlay" id="window_thumbnailOverlay${count}"></span>`;
 		win.thumbnail = thumbnail; // Used in setActive
 		
 		// Toggle window state on taskbar thumbnail click
@@ -451,7 +451,7 @@ function setActive(win) {
 	
 	if (active) {
 		active.thumbnail.style.backgroundImage
-		= "url(/assets/shared/taskbarButton_inactive.png)";
+		= "url('../assets/shared/taskbarButton_inactive.png')";
 		active.style.filter = "grayscale(0.6)";
 		active.style.boxShadow = "rgb(175, 175, 175) 0px 6px 50px -10px";
 	}
@@ -471,7 +471,7 @@ function setActive(win) {
 	win.thumbnail.style.opacity = "1";
 	win.thumbnail.style.transform = "translate(0, 0)";
 	win.thumbnail.style.backgroundImage
-	= "url(/assets/shared/taskbarButton_active.png)";
+	= "url('../assets/shared/taskbarButton_active.png')";
 }
 	
 // Makes a window inactive and hide it from view.
@@ -487,14 +487,14 @@ function setInactive(win) {
 	}
 	win.style.boxShadow = "rgb(175, 175, 175) 0px 6px 50px -10px";
 	win.style.filter = "grayscale(0.6)";
-	win.thumbnail.style.backgroundImage = "url(/assets/shared/taskbarButton_inactive.png)";
+	win.thumbnail.style.backgroundImage = "url('../assets/shared/taskbarButton_inactive.png')";
 }
 
 // Makes all windows inactive without hiding them.
 function setInactiveAll() {
 	if (active) {
 		active.thumbnail.style.backgroundImage
-		= "url(/assets/shared/taskbarButton_inactive.png)";
+		= "url('../assets/shared/taskbarButton_inactive.png')";
 		active.style.filter = "grayscale(0.6)";
 		active.style.boxShadow = "rgb(175, 175, 175) 0px 6px 50px -10px";
 		active = undefined;
