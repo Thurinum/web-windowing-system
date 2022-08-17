@@ -32,7 +32,7 @@ function addItem(win) {
 	
 	let item = document.createElement("div");
 	item.setAttribute("class", "appmenu_thumbnail");
-	item.innerHTML = `<div class="appmenu_thumbnailOverlay" id="appmenu_thumbnailOverlay${win.id}"></div><div class="appmenu_thumbnailIcon" style="background-image: url('/assets/icons/${win.icon}')"></div><div class="appmenu_thumbnailText">${win.title}</div>`;
+	item.innerHTML = `<div class="appmenu_thumbnailOverlay" id="appmenu_thumbnailOverlay${win.id}"></div><div class="appmenu_thumbnailIcon" style="background-image: url('../assets/icons/${win.icon}')"></div><div class="appmenu_thumbnailText">${win.title}</div>`;
 	menu.appendChild(item);
 	
 	item.childNodes[0].addEventListener("click", function(e) {
