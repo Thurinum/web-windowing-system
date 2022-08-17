@@ -1,0 +1,421 @@
+html,
+body {
+	margin: 0;
+	max-height: 100%;
+	overflow: hidden;
+	user-select: none;
+	/*whitelisted */
+}
+
+
+
+
+
+#workspace {
+	position: absolute;
+	width: 100vw;
+	height: 97vh;
+	background: url("/assets/shared/workspaceBackground.png");
+	background-size: cover;
+	background-position: center center;
+}
+
+#taskbar {
+	display: flex;
+	align-items: center;
+
+	position: absolute;
+	width: 96vw;
+	height: 3vh;
+	left: 7vw;
+	bottom: 0;
+	padding-left: 10px;
+	z-index: 4;
+
+	background: url("/assets/shared/taskbar.png");
+	background-size: cover;
+}
+
+
+
+
+
+/* App menu */
+#appmenuBtn {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 7vw;
+	height: 3vh;
+	max-height: 54px;
+	z-index: 5;
+	background: url("/assets/shared/appmenuButton.png");
+	background-size: 100% 100%;
+}
+
+#appmenuBtn:hover {
+	background: url("/assets/shared/appmenuButton_hover.png");
+	background-size: 100% 100%;
+}
+
+#appmenuBtn:active {
+	background: url("/assets/shared/appmenuButton_active.png");
+	background-size: 100% 100%;
+}
+
+#appmenu {
+	position: absolute;
+	bottom: 3vh;
+	left: 0;
+	height: 55vh;
+	width: 30vw;
+	border: solid 3px #045fe8;
+	background-image: url("/assets/shared/appmenuBackground2.jpeg");
+	z-index: 3;
+	box-shadow: 6px 3px 25px 2px #989595;
+
+	overflow-y: auto;
+	display: none;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: 20%;
+	transition: opacity 0.2s ease-out, bottom 0.2s ease-out;
+}
+
+.appmenu_thumbnail {
+	margin: 2%;
+	overflow: hidden;
+}
+
+.appmenu_thumbnailIcon {
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 65%;
+}
+
+.appmenu_thumbnailText {
+	text-align: center;
+	font-size: 0.7em;
+	font-family: Arial;
+}
+
+.appmenu_thumbnailOverlay {
+	position: absolute;
+	top: 0;
+	width: 20%;
+	height: 18%;
+}
+
+
+
+
+/* Window */
+.window {
+	position: fixed;
+	border: solid 3px #045fe8;
+	border-top: none;
+	display: none;
+	background-color: #e9e7d8;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	transition: opacity 0.2s ease-in-out,
+		transform 0.2s ease-in-out,
+		filter 0.2s ease-out,
+		left 0.2s ease-out,
+		top 0.2s ease-out,
+		width 0.2s ease-out,
+		height 0.2s ease-out;
+	z-index: 0;
+	box-shadow: rgb(175, 175, 175) 0px 6px 50px -10px;
+
+	min-width: 325px;
+	min-height: 215px;
+}
+
+.window_caption {
+	position: fixed;
+	width: 100%;
+	min-width: 325px;
+	height: 30px;
+	z-index: 100;
+	background-image: url('/assets/shared/titlebar.png');
+}
+
+.window_caption:hover {
+	cursor: grab;
+}
+
+.window_caption:active:hover {
+	cursor: grabbing;
+}
+
+.window_icon {
+	position: absolute;
+	left: 0.5%;
+	top: 1.5%;
+	width: 27px;
+	height: 27px;
+	z-index: 7;
+}
+
+.window_heading {
+	width: 100%;
+	height: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: arial;
+	position: absolute;
+	text-align: left;
+	line-height: 30px;
+	padding-left: 35px;
+	color: white;
+}
+
+.window_btnMinimize {
+	position: absolute;
+	right: 55px;
+	top: 4px;
+	width: 25px;
+	height: 25px;
+	border-radius: 3px;
+	transition: box-shadow 0.3s linear, opacity 0.3s linear;
+}
+
+.window_btnMinimize:hover {
+	box-shadow: 0 0 5px blue;
+}
+
+.window_btnMinimize:active {
+	opacity: 0.7;
+}
+
+.window_btnMaximize {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 28px;
+	top: 4px;
+	border-radius: 3px;
+	transition: box-shadow 0.3s linear, opacity 0.3s linear;
+}
+
+.window_btnMaximize:hover {
+	box-shadow: 0 0 5px blue;
+}
+
+.window_btnMaximize:active {
+	opacity: 0.7;
+}
+
+.window_btnClose {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 2px;
+	top: 4px;
+	border-radius: 3px;
+	transition: box-shadow 0.3s linear, opacity 0.3s linear;
+}
+
+.window_btnClose:hover {
+	box-shadow: 0 0 5px red;
+}
+
+.window_btnClose:active {
+	opacity: 0.7;
+}
+
+.window_content {
+	border: none;
+	padding: 3px;
+	position: absolute;
+	bottom: 0;
+
+	/*Important*/
+	width: 100%;
+	height: calc(100% - 30px);
+	min-width: 319px;
+	min-height: 155px;
+}
+
+.window_thumbnail {
+	display: inline-block;
+	width: 157px;
+	height: 2.5vh;
+	margin-top: 0.1%;
+	margin-right: 3px;
+	background-image: url(/assets/shared/taskbarButton_inactive.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	font-family: Arial;
+	transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+	z-index: 6;
+}
+
+.window_thumbnailWrapper {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.window_thumbnailIcon {
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.window_thumbnailTitle {
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+.window_thumbnailOverlay {
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 156px;
+	height: 100%;
+}
+
+
+
+
+
+/* Window resizers */
+.resizer_corner {
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	position: absolute;
+	z-index: 100;
+
+	opacity: 0;
+}
+
+.resizer_side {
+	background-color: hsl(118.6, 100%, 50%);
+	position: absolute;
+	z-index: 100;
+
+	opacity: 0;
+}
+
+.resizerTL {
+	left: -3px;
+	top: 0px;
+
+	cursor: nw-resize;
+}
+
+.resizerTR {
+	right: -3px;
+	top: 0px;
+
+	cursor: ne-resize;
+}
+
+.resizerBL {
+	left: -3px;
+	bottom: -3px;
+	cursor: sw-resize;
+}
+
+.resizerBR {
+	right: -7px;
+	bottom: -3px;
+	cursor: se-resize;
+}
+
+.resizerST {
+	width: 94%;
+	height: 5px;
+
+	top: 0;
+	left: 17px;
+	cursor: n-resize;
+}
+
+.resizerSB {
+	width: 94%;
+	height: 5px;
+
+	bottom: -3px;
+	left: 17px;
+	cursor: s-resize;
+}
+
+.resizerSL {
+	width: 5px;
+	height: 95%;
+
+	top: 17px;
+	left: -3px;
+	cursor: w-resize;
+}
+
+.resizerSR {
+	width: 5px;
+	height: 95%;
+
+	top: 17px;
+	right: -3px;
+	cursor: e-resize;
+}
+
+
+
+
+
+/* Context menu */
+.contextMenu {
+	position: absolute;
+	border: 1px solid grey;
+	background-color: white;
+	padding-left: 3px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right: 3px;
+	min-width: 200px;
+
+	z-index: 100;
+	box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.5);
+	transition: opacity 0.1s linear;
+}
+
+.contextMenu hr {
+	border: solid 1px lightgray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.contextMenu_button {
+	display: flex;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 6px;
+	border: none;
+	background-color: transparent;
+	font-family: ms-sans-serif, sans;
+	font-size: 14px;
+	text-align: left;
+	width: 100%;
+	transition: opacity 0.1s linear;
+}
+
+.contextMenu_button:hover {
+	background-color: #316ac5;
+	color: white;
+}
+
+.contextMenu_button:active {
+	background-color: hsl(217.1, 50%, 29.4%);
+	color: white;
+}
+
+.contextMenu_icon {
+	width: 17px;
+	height: 17px;
+}
