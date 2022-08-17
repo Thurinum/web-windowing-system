@@ -143,7 +143,7 @@ class Instance {
 		
 		if (this.icon != "") {
 			let icon = document.createElement("img");
-			icon.src = "../assets/icons/" + this.icon;
+			icon.src = "assets/icons/" + this.icon;
 			icon.setAttribute("class", "window_icon");
 			caption.appendChild(icon);
 		}
@@ -210,7 +210,7 @@ class Instance {
 		
 		if (this.allowMinimize) {
 			let btn = document.createElement("img");
-			btn.src = "../assets/shared/minimizeButton.png";
+			btn.src = "assets/shared/minimizeButton.png";
 			btn.setAttribute("class", "window_btnMinimize");
 			btn.setAttribute("id", `window_btnMinimize${count}`);
 			btn.setAttribute("draggable", "false");
@@ -225,7 +225,7 @@ class Instance {
 		
 		if (this.allowMaximize) {
 			let btn = document.createElement("img");
-			btn.src = "../assets/shared/maximizeButton.png";
+			btn.src = "assets/shared/maximizeButton.png";
 			btn.setAttribute("class", "window_btnMaximize");
 			btn.setAttribute("id", `window_btnMaximize${count}`);
 			btn.setAttribute("draggable", "false");
@@ -343,7 +343,7 @@ class Instance {
 		}
 		
 		let closeBtn = document.createElement("img");
-		closeBtn.src = "../assets/shared/closeButton.png";
+		closeBtn.src = "assets/shared/closeButton.png";
 		closeBtn.setAttribute("class", "window_btnClose");
 		closeBtn.setAttribute("id", `window_btnClose${count}`);
 		closeBtn.setAttribute("draggable", "false");
@@ -451,7 +451,7 @@ function setActive(win) {
 	
 	if (active) {
 		active.thumbnail.style.backgroundImage
-		= "url('../assets/shared/taskbarButton_inactive.png')";
+		= "url('assets/shared/taskbarButton_inactive.png')";
 		active.style.filter = "grayscale(0.6)";
 		active.style.boxShadow = "rgb(175, 175, 175) 0px 6px 50px -10px";
 	}
@@ -471,7 +471,7 @@ function setActive(win) {
 	win.thumbnail.style.opacity = "1";
 	win.thumbnail.style.transform = "translate(0, 0)";
 	win.thumbnail.style.backgroundImage
-	= "url('../assets/shared/taskbarButton_active.png')";
+	= "url('assets/shared/taskbarButton_active.png')";
 }
 	
 // Makes a window inactive and hide it from view.
@@ -487,14 +487,14 @@ function setInactive(win) {
 	}
 	win.style.boxShadow = "rgb(175, 175, 175) 0px 6px 50px -10px";
 	win.style.filter = "grayscale(0.6)";
-	win.thumbnail.style.backgroundImage = "url('../assets/shared/taskbarButton_inactive.png')";
+	win.thumbnail.style.backgroundImage = "url('assets/shared/taskbarButton_inactive.png')";
 }
 
 // Makes all windows inactive without hiding them.
 function setInactiveAll() {
 	if (active) {
 		active.thumbnail.style.backgroundImage
-		= "url('../assets/shared/taskbarButton_inactive.png')";
+		= "url('assets/shared/taskbarButton_inactive.png')";
 		active.style.filter = "grayscale(0.6)";
 		active.style.boxShadow = "rgb(175, 175, 175) 0px 6px 50px -10px";
 		active = undefined;

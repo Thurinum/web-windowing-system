@@ -264,7 +264,7 @@ body {
 	height: 2.5vh;
 	margin-top: 0.1%;
 	margin-right: 3px;
-	background-image: url("../assets/shared/taskbarButton_inactive.png");
+	background-image: url("assets/shared/taskbarButton_inactive.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	font-family: Arial;
