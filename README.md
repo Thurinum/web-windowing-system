@@ -1,5 +1,5 @@
 # web-windowing-system
-A very basic but flexible JS-powered windowing system.  
+A very basic but flexible JS-powered windowing system. Check it out [here](https://thurinum.github.io/web-windowing-system).  
 
 ![image](https://user-images.githubusercontent.com/43908636/185015620-48a4e245-a810-4eef-8362-d6e902f2be27.png)
 
