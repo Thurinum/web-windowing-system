@@ -445,7 +445,7 @@ class Instance {
 	
 // Gives the focus to a window. Displays it if it is hidden.
 function setActive(win) {
-	if (!Utils.id(`window_thumbnail${count}`)) {
+	if (!Utils.id(`window_thumbnail${count - 1}`)) {
 		taskbar.append(win.thumbnail);
 	}
 	
