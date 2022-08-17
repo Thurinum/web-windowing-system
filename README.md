@@ -5,7 +5,7 @@ A very basic but flexible JS-powered windowing system.
 
 This little project brings a flexible, desktop-like windowing system to the web.  
 It actually started as a refactoring of a terrible fake online Windows XP clone I had made years ago.  
-I ended up rewriting most of the windowing logic, so why not post it :)
+I ended up rewriting most of the windowing logic, and thus decided to post it :)
 
 ## Features
 - Configurable (albeit ugly) app menu
