@@ -366,7 +366,7 @@ class Instance {
 		// Window contents
 		let container = document.createElement("div");
 		container.setAttribute("class", "window_content");
-		let content = fetch("web-windowing-system/windowdata/" + this.path)
+		let content = fetch("windowdata/" + this.path)
 			.then(response => {
 				if (response.ok) {
 					return response.text();
