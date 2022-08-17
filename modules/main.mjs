@@ -40,13 +40,13 @@ AppMenu.addItem(new Window.Instance ({
 	title: "Welcome",
 	path: "dummy.html",
 	icon: "scene_editor.png",
-	position: ["right", "center"],
+	position: ["left", "center"],
 	isModal: false
 }));
 AppMenu.addItem(new Window.Instance ({
 	title: "Dummy",
 	path: "dummy2.html",
 	icon: "scene_editor.png",
-	position: ["left", "center"],
+	position: ["center", "center"],
 	isModal: false
 }));
