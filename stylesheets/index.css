@@ -1,3 +1,7 @@
+:root {
+	--startbtn-width: 130px;
+}
+
 html,
 body {
 	margin: 0;
@@ -25,9 +29,9 @@ body {
 	align-items: center;
 
 	position: absolute;
-	width: 96vw;
+	width: calc(100vw - var(--startbtn-width));
 	height: 3vh;
-	left: 7vw;
+	left: var(--startbtn-width);
 	bottom: 0;
 	padding-left: 10px;
 	z-index: 4;
@@ -45,7 +49,7 @@ body {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 7vw;
+	width: var(--startbtn-width);
 	height: 3vh;
 	max-height: 54px;
 	z-index: 5;
