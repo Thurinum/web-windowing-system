@@ -8,40 +8,38 @@ import * as System from "./system.mjs";
 
 System.setupClock();
 
+// define menus for the whole desktop
 ContextMenu.define(Utils.id("workspace"),
 	new ContextMenu.Entries (
 		[
-			"Alert smt",
+			"Menu entry",
+			"Menu entry with icon",
 			"---",
-			"Alert gay",
-			"Options"
+			"More..."
 		],
 		[
 			"", 
 			"",
 			"", 
 			new ContextMenu.Entries (
-				["Rien", "lol"],
-				["", ""],
-				["", ""],
-				["test.png", ""]
+				["Furries."],
+				[""],
+				[""],
+				["test.png"]
 			)
 		],
 		["", "", "", ""],
-		["test.png", "", "default.png", ""]
+		["", "test.png", "", ""]
 	)
 );
-
-let sceneEditor = new Window.Instance ({
-	title: "Scene Editor",
-	path: "test.html",
-	icon: "scene_editor.png",
-	position: ["left", "center"],
-	isModal: false
-});
-
 
 window.settings = new Settings.Instance("test");
 window.settings.save();
 
-AppMenu.addItem(sceneEditor);
+AppMenu.addItem(new Window.Instance ({
+	title: "Welcome",
+	path: "dummy.html",
+	icon: "scene_editor.png",
+	position: ["center", "center"],
+	isModal: false
+}));
